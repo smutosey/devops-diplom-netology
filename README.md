@@ -305,7 +305,7 @@ Atlantis: https://atlantis.smutosey.ru
 Запускается при любом коммите в любую ветку. Выполняется `werf cr` для аутентификации в Container Registry и `werf build` для сборки docker image и отправки в registry. Тег образа формируется исходя из содержимого слоев (фича werf).  
 
 2. [deploy](https://github.com/smutosey/devops-diplom-app/blob/main/.github/workflows/deploy.yml)
-Запускается при создании тега с семантическим версионированием (`v[0-9]+.[0-9]+.[0-9]+`). В джобе также выполняем `werf cr` и запускаем после `werf converge`, который собирает образ, пушит в registry и выполняет деплой в k8s-кластер. 
+Запускается при создании тега с семантическим версионированием (`v[0-9]+.[0-9]+.[0-9]+`). В джобе также выполняем `werf cr` и запускаем после `werf converge`, который собирает образ, пушит в registry и выполняет деплой в k8s-кластер на основе манифестов в [.helm/templates](https://github.com/smutosey/devops-diplom-app/tree/main/.helm/templates)
 
 Конфигурация для доступа в кластер лежит в секретах репозитория:  
 ![](img/14-secrets.png)
